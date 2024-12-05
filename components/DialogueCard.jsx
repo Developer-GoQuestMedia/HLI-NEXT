@@ -43,11 +43,11 @@ export default function DialogueCard({ dialogue, artistType, onApprove, showConf
   }
 
   return (
-    <div className="relative bg-white rounded-lg p-4">
+    <div className="relative bg-white rounded-lg shadow-md p-4 mb-4">
       <div className="space-y-4">
-        <div className="flex justify-between items-center text-sm">
-          <span className="font-medium">Dialogue {dialogue.index}</span>
-          <span className="text-gray-500">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center text-sm">
+          <span className="font-medium mb-2 sm:mb-0">Dialogue {dialogue.index}</span>
+          <span className="text-gray-500 text-xs sm:text-sm">
             {dialogue.timeStart} - {dialogue.timeEnd}
           </span>
         </div>
@@ -63,7 +63,7 @@ export default function DialogueCard({ dialogue, artistType, onApprove, showConf
         ) : (
           <div className="space-y-2">
             <Label className="text-sm font-medium">Character</Label>
-            <div className="p-2 bg-gray-50 rounded">
+            <div className="p-2 bg-gray-50 rounded text-sm">
               {dialogue.character}
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function DialogueCard({ dialogue, artistType, onApprove, showConf
               rows={3}
             />
           ) : (
-            <div className="p-2 bg-gray-50 rounded">
+            <div className="p-2 bg-gray-50 rounded text-sm">
               {dialogue.dialogue?.original}
             </div>
           )}
@@ -87,13 +87,13 @@ export default function DialogueCard({ dialogue, artistType, onApprove, showConf
           <>
             <div className="space-y-2">
               <Label className="text-sm font-medium">Translated</Label>
-              <div className="p-2 bg-gray-50 rounded">
+              <div className="p-2 bg-gray-50 rounded text-sm">
                 {dialogue.dialogue?.translated}
               </div>
             </div>
             <div className="space-y-2">
               <Label className="text-sm font-medium">Adapted</Label>
-              <div className="p-2 bg-gray-50 rounded">
+              <div className="p-2 bg-gray-50 rounded text-sm">
                 {dialogue.dialogue?.adapted}
               </div>
             </div>
@@ -107,24 +107,24 @@ export default function DialogueCard({ dialogue, artistType, onApprove, showConf
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="absolute inset-0 bg-white rounded-lg shadow-lg"
+            className="absolute inset-0 bg-white rounded-lg shadow-lg flex items-center justify-center"
           >
-            <div className="p-4 space-y-4">
-              <h3 className="text-lg font-semibold">Confirm Action</h3>
-              <p className="text-sm text-gray-600">
+            <div className="p-4 space-y-4 w-full max-w-sm">
+              <h3 className="text-lg font-semibold text-center">Confirm Action</h3>
+              <p className="text-sm text-gray-600 text-center">
                 Do you want to approve or rewrite this dialogue?
               </p>
               <div className="space-y-2">
                 <Button 
                   onClick={handleRewrite} 
                   variant="outline" 
-                  className="w-full justify-start"
+                  className="w-full justify-center"
                 >
                   <X className="mr-2 h-4 w-4" /> Rewrite
                 </Button>
                 <Button 
                   onClick={handleApprove} 
-                  className="w-full justify-start bg-green-500 hover:bg-green-600"
+                  className="w-full justify-center bg-green-500 hover:bg-green-600"
                 >
                   <Check className="mr-2 h-4 w-4" /> Approve
                 </Button>

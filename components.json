@@ -7,15 +7,37 @@
     "config": "tailwind.config.js",
     "css": "app/globals.css",
     "baseColor": "slate",
-    "cssVariables": true,
-    "prefix": ""
+    "cssVariables": true
   },
   "aliases": {
     "components": "@/components",
-    "utils": "@/lib/utils",
-    "ui": "@/components/ui",
-    "lib": "@/lib",
-    "hooks": "@/hooks"
+    "utils": "@/lib/utils"
   },
-  "iconLibrary": "lucide"
+  "components": {
+    "button": {
+      "path": "@/components/ui/button",
+      "type": "function"
+    },
+    "card": {
+      "path": "@/components/ui/card",
+      "type": "function"
+    },
+    "input": {
+      "path": "@/components/ui/input",
+      "type": "function"
+    },
+    "label": {
+      "path": "@/components/ui/label",
+      "type": "function"
+    },
+    "textarea": {
+      "path": "@/components/ui/textarea",
+      "type": "function"
+    },
+    "scroll-area": {
+      "path": "@/components/ui/scroll-area",
+      "type": "function"
+    }
+  }
 }
+
